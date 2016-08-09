@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/toolbar" android:id="@+id/toolbar"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_marginTop="64dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="32dp"
+        android:textSize="20sp"
+        android:text="@string/app_welcome_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/usernameEditText"
+        android:hint="@string/app_welcome_username"
+        android:singleLine="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/enterButton"
+        android:theme="@style/AppTheme.Brand.Button"
+        android:textColor="@color/icons"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/app_welcome_button"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_height="48dp" />
 
 
 </LinearLayout>

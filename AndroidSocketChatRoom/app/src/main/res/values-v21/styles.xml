@@ -9,5 +9,15 @@
         <item name="colorControlNormal">@color/colorPrimaryDark</item>
         <item name="colorControlActivated">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorAccent</item>
+
     </style>
+
+    <style name="AppTheme.Brand.Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:colorButtonNormal">@color/colorPrimary</item>
+        <item name="android:textColor">@color/icons</item>
+        <item name="android:colorControlActivated">@color/colorPrimaryLight</item>
+        <item name="android:colorControlHighlight">@color/colorPrimaryLight</item>
+    </style>
+
+
 </resources>
