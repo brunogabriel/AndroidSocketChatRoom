@@ -4,5 +4,6 @@
         learn more about Android and Sockets in Node JS:</string>
     <string name="app_welcome_username">Tap your username here</string>
     <string name="app_welcome_button">Enter</string>
+    <string name="app_network_error">Fail to connect, verify your network access</string>
 
 </resources>

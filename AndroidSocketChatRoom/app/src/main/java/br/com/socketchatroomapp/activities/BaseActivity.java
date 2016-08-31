@@ -1,17 +1,14 @@
 package br.com.socketchatroomapp.activities;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.StrictMode;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
-
-import br.com.socketchatroomapp.manager.ChatManager;
-import butterknife.ButterKnife;
 
 /**
  * Created by brunogabriel on 8/8/16.
@@ -23,12 +20,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Applying StrictMode and ButterKnife debug
-        if (ChatManager.DEVELOPER_MODE) {
-            Log.d(TAG, "Starting strict mode in development");
-            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build());
-            ButterKnife.setDebug(true);
-        }
     }
 
     @Override
@@ -71,6 +62,27 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void runOnUI(Runnable action) {
         if (action!=null) {
             runOnUiThread(action);
+        }
+    }
+
+    public void showSimpleDialog(String mTitle, String mContent) {
+        if (mContent != null) {
+            AlertDialog.Builder mBuilderDialog = new AlertDialog.Builder(this);
+
+            if (mTitle != null) {
+                mBuilderDialog.setTitle(mTitle);
+            }
+
+            mBuilderDialog.setMessage(mTitle);
+            mBuilderDialog.setCancelable(false);
+            mBuilderDialog.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            });
+
+            mBuilderDialog.show();
         }
     }
 

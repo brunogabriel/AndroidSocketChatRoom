@@ -1,0 +1,28 @@
+{
+  "name": "androidchatroom",
+  "version": "0.0.1",
+  "description": "A simple example using Node JS and Android to create a simple chat Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunogabriel/AndroidSocketChatRoom.git"
+  },
+  "keywords": [
+    "android",
+    "nodejs",
+    "socketio",
+    "sockets"
+  ],
+  "author": "brunogabriel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brunogabriel/AndroidSocketChatRoom/issues"
+  },
+  "homepage": "https://github.com/brunogabriel/AndroidSocketChatRoom#readme",
+  "dependencies": {
+    "socket.io": "^1.4.8"
+  }
+}

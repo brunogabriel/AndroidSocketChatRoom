@@ -1,5 +1,6 @@
 package br.com.socketchatroomapp.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
@@ -80,9 +81,13 @@ public class EnterActivity extends BaseActivity implements Validator.ValidationL
         String mUsername = mUsernameEditText.getText().toString().trim();
 
         if (isNetworkAvailable()) {
-            // TODO: validate if in this room has the same user name
+            Intent mIntent = new Intent();
+            mIntent.setClass(this, ChatActivity.class);
+            mIntent.putExtra("username", mUsername);
+            startActivity(mIntent);
+            this.finish();
         } else {
-            // TODO: Show error Dialog
+            showSimpleDialog(null, getString(R.string.app_network_error));
         }
     }
 
