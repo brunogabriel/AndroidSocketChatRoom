@@ -8,4 +8,8 @@
     <color name="colorSecondaryText">#757575</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#BDBDBD</color>
+
+    <!-- Chat Colors -->
+    <color name="colorChatLeft">#FF8A65</color>
+    <color name="colorChatRight">#AED581</color>
 </resources>

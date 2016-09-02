@@ -1,14 +1,19 @@
 package br.com.socketchatroomapp.activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 /**
  * Created by brunogabriel on 8/8/16.
@@ -90,4 +95,22 @@ public abstract class BaseActivity extends AppCompatActivity {
      * If activity use this base, need to implement this method to organize ui code elements
      */
     public abstract void initUI();
+
+    public String getIdentifier() {
+       return Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+    }
+
+    public void hideKeyboard() {
+        try {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+            View view = getCurrentFocus();
+            if (view == null) {
+                view = new View(this);
+            }
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        } catch (Exception e) {
+            Log.e(TAG, "Fail to close keyboard: " + e.getMessage());
+        }
+
+    }
 }

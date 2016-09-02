@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">SocketChatRoomApp</string>
+    <string name="server_url">http://192.168.1.36:3000</string>
+
     <string name="app_welcome_chat">Welcome to this very simple example, insert your name and let\'s go
         learn more about Android and Sockets in Node JS:</string>
     <string name="app_welcome_username">Tap your username here</string>

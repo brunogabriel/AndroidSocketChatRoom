@@ -6,7 +6,11 @@ import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.TextView;
+
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
@@ -67,6 +71,16 @@ public class EnterActivity extends BaseActivity implements Validator.ValidationL
                     mUsernameEditText.setText(mResult);
                     mUsernameEditText.setSelection(mResult.length());
                 }
+            }
+        });
+
+        mUsernameEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i == EditorInfo.IME_ACTION_DONE) {
+                    mValidator.validate();
+                }
+                return false;
             }
         });
     }
